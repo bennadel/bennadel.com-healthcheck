@@ -1,0 +1,15 @@
+{
+	"name": "bennadel-healthcheck",
+	"version": "1.0.0",
+	"description": "Netlify Function that probes BenNadel.com on a regular basis.",
+	"main": "",
+	"scripts": {
+		"netlify-dev": "netlify dev",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ben Nadel",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.26.1"
+	}
+}
