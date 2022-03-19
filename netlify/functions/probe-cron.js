@@ -87,6 +87,7 @@ async function sendEmail( statusCode ) {
 	} catch ( error ) {
 
 		console.log( "Failed to send alert email." );
+		console.log( "Token length: " + process.env.POSTMARK_SERVER_TOKEN.length );
 		console.log( error );
 
 	}
