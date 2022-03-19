@@ -29,8 +29,8 @@ exports.handler = async function( event, context ) {
 
 		if ( error.response ) {
 
-			sendEmail( error.response.status );
 			console.log( `Healthcheck returned with non-200 status code [${ error.response.status }].` );
+			await sendEmail( error.response.status );
 
 		} else {
 
@@ -81,7 +81,7 @@ async function sendEmail( statusCode ) {
 				`,
 				MessageStream: "outbound"
 			},
-			timeout: 20000
+			timeout: 5000
 		});
 
 	} catch ( error ) {
