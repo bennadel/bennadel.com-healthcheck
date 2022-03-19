@@ -30,6 +30,10 @@ exports.handler = async function( event, context ) {
 		if ( error.response ) {
 
 			console.log( `Healthcheck returned with non-200 status code [${ error.response.status }].` );
+			// CAUTION: Even though we don't care about the underlying API call to
+			// Postmark, we still have to AWAIT the call otherwise the Postmark API call
+			// will timeout. I assume this has to do with the Function being torn-down
+			// once the handler() returns.
 			await sendEmail( error.response.status );
 
 		} else {
@@ -87,7 +91,6 @@ async function sendEmail( statusCode ) {
 	} catch ( error ) {
 
 		console.log( "Failed to send alert email." );
-		console.log( "Token length: " + process.env.POSTMARK_SERVER_TOKEN.length );
 		console.log( error );
 
 	}

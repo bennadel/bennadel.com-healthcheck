@@ -19,9 +19,8 @@ async function checkStatus() {
 
 		}
 
-		var response = await apiResponse.json();
-
-		setStatusText( response.statusText );
+		var data = await apiResponse.json();
+		setStatusText( data.statusText );
 
 	} catch ( error ) {
 

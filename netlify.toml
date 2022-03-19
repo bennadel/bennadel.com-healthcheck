@@ -17,9 +17,9 @@
 [functions]
 	# Directory with serverless functions, including background and cron functions, to
 	# deploy. This is relative to the base directory if one has been set, or the root
-	# directory if a base hasn’t been set.
+	# directory if a base hasn't been set.
 	directory = "netlify/functions/"
 
 [functions."probe-cron"]
 	# https://crontab.guru/every-10-minutes
-	schedule = "*/5 * * * *"
+	schedule = "*/10 * * * *"
