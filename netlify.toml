@@ -25,4 +25,4 @@
 
 [functions."probe-cron"]
   # https://crontab.guru/every-5-minutes
-  schedule = "*/1 * * * *"
+  schedule = "*/5 * * * *"
