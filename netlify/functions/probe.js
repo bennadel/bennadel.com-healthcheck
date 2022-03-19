@@ -5,6 +5,9 @@ var axios = require( "axios" );
 // ----------------------------------------------------------------------------------- //
 // ----------------------------------------------------------------------------------- //
 
+/**
+* I provide the Netlify serverless function logic.
+*/
 exports.handler = async function( event, context ) {
 
 	try {
@@ -16,9 +19,6 @@ exports.handler = async function( event, context ) {
 		});
 		var statusText = "All systems are OK.";
 
-		// Temporary to make sure cron function is actually firing.
-		console.log( "Status OK" );
-
 	} catch ( error ) {
 
 		var statusText = ( error.response )
@@ -28,7 +28,7 @@ exports.handler = async function( event, context ) {
 
 		// If the response exists on the error object, it means that the request was made
 		// and the origin server responded with a status code. As such, let's only log the
-		// errors if there was a problem with the actual request itself (ie, an Axios
+		// errors if there was a problem with the actual request itself (ex, an Axios
 		// configuration problem).
 		if ( ! error.response ) {
 
