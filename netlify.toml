@@ -22,4 +22,4 @@
 
 [functions."probe-cron"]
 	# https://crontab.guru/every-10-minutes
-	schedule = "*/10 * * * *"
+	schedule = "*/1 * * * *"
