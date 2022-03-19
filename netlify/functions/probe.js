@@ -16,6 +16,9 @@ exports.handler = async function( event, context ) {
 		});
 		var statusText = "All systems are OK.";
 
+		// Temporary to make sure cron function is actually firing.
+		console.log( "Status OK" );
+
 	} catch ( error ) {
 
 		var statusText = ( error.response )
