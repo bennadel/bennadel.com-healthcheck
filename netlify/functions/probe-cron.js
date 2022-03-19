@@ -81,7 +81,7 @@ async function sendEmail( statusCode ) {
 				`,
 				MessageStream: "outbound"
 			},
-			timeout: 5000
+			timeout: 20000
 		});
 
 	} catch ( error ) {
